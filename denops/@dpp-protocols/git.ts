@@ -77,7 +77,7 @@ export class Protocol extends BaseProtocol<Params> {
     }
 
     const directory = url.replace(/\.git$/, "").replace(/^https:\/+|^git@/, "")
-      .replace(/:/, "/");
+      .replace(/\/https:\/+/, "/").replace(/:/, "/");
 
     return {
       path: `${await vars.g.get(
